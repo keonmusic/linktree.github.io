@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keon Wu | Links</title>
+<link rel="icon" type="image/png" href="R hologram nobackground.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --aqua: #66cdaa;
+  --aqua-dim: #3d8a72;
+  --aqua-faint: rgba(102,205,170,0.08);
+  --aqua-border: rgba(102,205,170,0.2);
+  --black: #000;
+  --dark: #080808;
+  --mid: #111;
+  --muted: #555;
+  --white: #e8e8e8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--black);
+  color: var(--aqua);
+  overflow-x: hidden;
+}
+
+/* ── MARQUEE BANNER ── */
+.marquee-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--dark);
+  border-bottom: 1px solid var(--aqua-border);
+  padding: 9px 0;
+  white-space: nowrap;
+}
+.marquee-banner .marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+.marquee-banner .marquee-track span {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--aqua-dim);
+  padding: 0 28px;
+  flex-shrink: 0;
+}
+.marquee-banner .marquee-track span::after {
+  content: '◆';
+  margin-left: 28px;
+  color: rgba(102,205,170,0.3);
+  font-size: 9px;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-banner .marquee-track { animation: none; }
+}
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("Dungog Cloud.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.95) 100%);
+}
+.header-inner {
+  position: relative;
+  z-index: 1;
+  padding: 48px 20px 36px;
+  animation: fadeUp 1.2s ease both;
+}
+.avatar-ring {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 22px;
+  border: 1px solid var(--aqua-border);
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+}
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.header-eyebrow {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--aqua-dim);
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+h1 span {
+  color: var(--aqua);
+  font-style: italic;
+}
+.tagline {
+  margin-top: 18px;
+  font-size: 15px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(102,205,170,0.6);
+  font-weight: 300;
+}
+
+/* ── LINKS ── */
+#links {
+  background: var(--dark);
+  background-image: url("R hologram background.png");
+  background-size: cover;
+  background-position: center;
+  border-top: 1px solid var(--aqua-border);
+  padding: 56px 20px 80px;
+}
+.links-content {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--aqua-dim);
+  margin-bottom: 28px;
+  text-align: center;
+}
+.link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  border: 1px solid var(--aqua-border);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.link-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(102,205,170,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.link-btn:hover {
+  border-color: var(--aqua);
+  background: rgba(102,205,170,0.08);
+  color: var(--aqua);
+  transform: translateY(-1px);
+}
+.link-btn .link-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+.link-btn .link-text { flex: 1; }
+.link-btn .link-sub {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--aqua-dim);
+  font-weight: 300;
+  margin-top: 2px;
+}
+.link-btn .link-arrow {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  fill: currentColor;
+  transition: transform 0.2s;
+}
+.link-btn:hover .link-arrow { transform: translateX(3px); opacity: 1; }
+
+/* ── SOCIALS ── */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--aqua-border);
+}
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--aqua-border);
+  color: var(--aqua-dim);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+.social-btn:hover {
+  border-color: var(--aqua);
+  color: var(--aqua);
+  background: rgba(102,205,170,0.06);
+}
+.social-btn svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 28px 20px;
+  background: #050505;
+  border-top: 1px solid var(--aqua-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 640px) {
+  .footer-row { flex-direction: column; gap: 8px; text-align: center; }
+  .socials { gap: 8px; }
+  .link-btn { padding: 16px 18px; font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<div class="marquee-banner" role="banner" aria-label="Announcement">
+  <div class="marquee-track">
+    <span>New works &amp; compositions in production — more coming soon</span>
+    <span>New works &amp; compositions in production — more coming soon</span>
+    <span>New works &amp; compositions in production — more coming soon</span>
+    <span>New works &amp; compositions in production — more coming soon</span>
+  </div>
+</div>
+
+<header>
+<div class="header-inner">
+<div class="avatar-ring">
+<img src="R hologram nobackground.png" alt="Rogue Industries">
+</div>
+<p class="header-eyebrow">Sydney, Australia</p>
+<h1>Keon <span>Wu</span></h1>
+<p class="tagline">Film &nbsp;·&nbsp; Game &nbsp;·&nbsp; TV &nbsp;·&nbsp; Cinematic</p>
+</div>
+</header>
+
+<section id="links">
+<div class="links-content">
+<p class="section-label">Find Me</p>
+
+<ul class="link-list">
+
+<li>
+<a class="link-btn" href="https://portfolio.rogueindustries.au" target="_blank" rel="noopener">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l7.5 3.75L12 11.7 4.5 7.95 12 4.2zM4 9.3l7 3.5v7.4l-7-3.5V9.3zm9 10.9v-7.4l7-3.5v7.4l-7 3.5z"/></svg>
+<span class="link-text">Portfolio<span class="link-sub">Demo reel &amp; full body of work</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+<li>
+<a class="link-btn" href="https://ko-fi.com/DustyTunes" target="_blank" rel="noopener">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M2 4h17a3 3 0 0 1 0 6h-1v2a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6V4zm17 2h-1v4h1a2 2 0 0 0 0-4zM4 6v6a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4V6H4z"/></svg>
+<span class="link-text">Support on Ko-fi<span class="link-sub">Help fund the next soundtrack</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+<li>
+<a class="link-btn" href="https://open.spotify.com/artist/2CUFaklR3ZH26Ct7gV3ewe" target="_blank" rel="noopener">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+<span class="link-text">Spotify<span class="link-sub">Stream the music</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+<li>
+<a class="link-btn" href="https://keonwu.bandcamp.com" target="_blank" rel="noopener">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
+<span class="link-text">Bandcamp<span class="link-sub">Buy &amp; download tracks</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+<li>
+<a class="link-btn" href="https://youtube.com/@KeonWu_Music" target="_blank" rel="noopener">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+<span class="link-text">YouTube<span class="link-sub">Trailers, rescores &amp; demos</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+<li>
+<a class="link-btn" href="mailto:keon@rogueindustries.au">
+<svg class="link-icon" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24l-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"/></svg>
+<span class="link-text">Email<span class="link-sub">keon@rogueindustries.au</span></span>
+<svg class="link-arrow" viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+</a>
+</li>
+
+</ul>
+
+<div class="socials">
+<a class="social-btn" href="https://instagram.com/keon_wu_" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.333.013 7.053.072 5.775.131 4.602.425 3.635 1.392 2.668 2.359 2.374 3.532 2.315 4.81 2.256 6.09 2.243 6.498 2.243 12c0 5.502.013 5.91.072 7.19.059 1.278.353 2.451 1.32 3.418.967.967 2.14 1.261 3.418 1.32C8.333 23.987 8.741 24 12 24s3.667-.013 4.947-.072c1.278-.059 2.451-.353 3.418-1.32.967-.967 1.261-2.14 1.32-3.418.059-1.28.072-1.688.072-7.19 0-5.502-.013-5.91-.072-7.19-.059-1.278-.353-2.451-1.32-3.418C19.398.425 18.225.131 16.947.072 15.667.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+Instagram
+</a>
+<a class="social-btn" href="https://facebook.com/keonwu.music" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+Facebook
+</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="footer-row">
+<span>© Rogue Industries 2026</span>
+<span>Keon Wu — Film Composer</span>
+</div>
+</footer>
+
+</body>
+</html>
